@@ -1,16 +1,29 @@
 package com.example.crudcars.model;
 
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
-@Entity(name = "countries")
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Entity(name = "country")
 public class Country {
+
     @Id
-    long id;
-    String name;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(unique = true)
+    private String name;
+
+    @OneToMany
+    @JoinColumn(name = "country_id")
+    @JsonManagedReference
+    private List<Car> cars;
 }

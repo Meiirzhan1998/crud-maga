@@ -1,7 +1,5 @@
 package com.example.crudcars.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
@@ -12,11 +10,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity(name = "country")
+@Entity(name = "countries")
 public class Country {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(unique = true)
@@ -25,5 +23,5 @@ public class Country {
     @OneToMany
     @JoinColumn(name = "country_id")
     @JsonManagedReference
-    private List<Car> cars;
+    private List<City> cities;
 }

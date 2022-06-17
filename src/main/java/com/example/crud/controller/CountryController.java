@@ -1,7 +1,7 @@
-package com.example.crudcars.controller;
+package com.example.crud.controller;
 
-import com.example.crudcars.model.Country;
-import com.example.crudcars.service.ICountryService;
+import com.example.crud.model.Country;
+import com.example.crud.service.ICountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

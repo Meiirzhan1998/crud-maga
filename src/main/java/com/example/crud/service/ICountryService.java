@@ -1,6 +1,6 @@
-package com.example.crudcars.service;
+package com.example.crud.service;
 
-import com.example.crudcars.model.Country;
+import com.example.crud.model.Country;
 
 public interface ICountryService {
     void addCountry(Country country);

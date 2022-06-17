@@ -1,7 +1,7 @@
-package com.example.crudcars.service;
+package com.example.crud.service;
 
-import com.example.crudcars.model.Country;
-import com.example.crudcars.repository.CountryRepository;
+import com.example.crud.model.Country;
+import com.example.crud.repository.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

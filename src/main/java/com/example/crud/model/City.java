@@ -1,4 +1,4 @@
-package com.example.crudcars.model;
+package com.example.crud.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;

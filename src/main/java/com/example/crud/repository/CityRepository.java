@@ -1,7 +1,7 @@
-package com.example.crudcars.repository;
+package com.example.crud.repository;
 
 
-import com.example.crudcars.model.City;
+import com.example.crud.model.City;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

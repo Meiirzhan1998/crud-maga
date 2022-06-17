@@ -1,7 +1,7 @@
-package com.example.crudcars.service;
+package com.example.crud.service;
 
-import com.example.crudcars.model.City;
-import com.example.crudcars.repository.CityRepository;
+import com.example.crud.model.City;
+import com.example.crud.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

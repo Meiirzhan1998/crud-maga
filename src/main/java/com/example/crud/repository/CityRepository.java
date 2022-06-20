@@ -9,6 +9,7 @@ import java.util.List;
 @Repository
 public interface CityRepository  extends JpaRepository<City, Long> {
     List<City> findAllByCountry_Id(long countryId);
+    void deleteById(long id);
 }
 
 

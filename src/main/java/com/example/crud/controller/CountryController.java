@@ -7,20 +7,32 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/countries")
+@RequestMapping("/country")
 public class CountryController {
 
     @Autowired
     protected ICountryService iCountryService;
 
-    @PostMapping("/add")
-    public void addCountry(@RequestBody Country country){
-        iCountryService.addCountry(country);
+
+    @PostMapping("/create")
+    public void create(@RequestBody Country country) {
+        iCountryService.create(country);
     }
 
-    @GetMapping("/{id}")
-    public Country findById(@PathVariable long id){
-        return iCountryService.findById(id);
+    @GetMapping("read/{id}")
+    public Country read(@PathVariable long id) {
+        return iCountryService.read(id);
     }
+
+    @PutMapping("/update")
+    public Country update(@RequestBody Country country) {
+        return iCountryService.update(country);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable long id) {
+        iCountryService.delete(id);
+    }
+
 
 }

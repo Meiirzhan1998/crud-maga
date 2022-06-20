@@ -5,23 +5,30 @@ import com.example.crud.repository.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
-
 @Service
 public class CountryServiceImpl implements ICountryService {
 
     @Autowired
-    protected CountryRepository countryRepository;
+    CountryRepository countryRepository;
 
 
     @Override
-    @Transactional
-    public void addCountry(Country country) {
+    public void create(Country country) {
         countryRepository.save(country);
     }
 
     @Override
-    public Country findById(long id) {
+    public Country read(long id) {
         return countryRepository.findById(id);
+    }
+
+    @Override
+    public Country update(Country country) {
+        return countryRepository.save(country);
+    }
+
+    @Override
+    public void delete(long id) {
+        countryRepository.deleteById(id);
     }
 }

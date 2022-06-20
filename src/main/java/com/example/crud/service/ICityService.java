@@ -5,9 +5,12 @@ import com.example.crud.model.City;
 import java.util.List;
 
 public interface ICityService {
-    City findById(long id);
+    void create(City city);
+    City read(long id);
 
-    void addCity(City city);
+    City update(City city);
+
+    void delete(long id);
 
     List<City> findAllByCountry_Id(long countryId);
 }

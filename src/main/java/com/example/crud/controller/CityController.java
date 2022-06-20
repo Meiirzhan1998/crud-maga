@@ -9,24 +9,34 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
+@RequestMapping("/city")
 public class CityController {
 
     @Autowired
     ICityService iCityService;
 
-    @RequestMapping(value = "/add",method = RequestMethod.POST)
-    public void addCity(@RequestBody City city){
-        iCityService.addCity(city);
+    @PostMapping("/create")
+    public void create(@RequestBody City city) {
+        iCityService.create(city);
     }
 
-    @RequestMapping(value = "/findById", method = RequestMethod.GET)
-    public City findById(@RequestParam(name = "id") long id){
-        return iCityService.findById(id);
+    @GetMapping("read/{id}")
+    public City read(@PathVariable long id) {
+        return iCityService.read(id);
     }
 
-    @RequestMapping(value = "/findByCountryId/{countryId}",method = RequestMethod.GET)
-    public List<City> findAllByCountry_Id(@PathVariable long countryId){
+    @PutMapping("/update")
+    public City update(@RequestBody City city) {
+        return iCityService.update(city);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable long id) {
+        iCityService.delete(id);
+    }
+
+    @GetMapping("/countryId/{countryId}")
+    public List<City> findAllByCountry_Id(@PathVariable long countryId) {
         return iCityService.findAllByCountry_Id(countryId);
     }
-
 }

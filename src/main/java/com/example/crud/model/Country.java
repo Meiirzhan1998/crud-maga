@@ -11,6 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity(name = "countries")
+@Table(name = "countries")
 public class Country {
 
     @Id
@@ -21,7 +22,6 @@ public class Country {
     private String name;
 
     @OneToMany
-    @JoinColumn(name = "country_id")
     @JsonManagedReference
     private List<City> cities;
 }

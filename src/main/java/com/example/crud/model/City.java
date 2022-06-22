@@ -14,8 +14,6 @@ import javax.persistence.*;
 @Builder
 @Entity(name = "cities")
 public class City {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -24,7 +22,7 @@ public class City {
     private String name;
 
     @JsonBackReference
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
+    @ManyToOne //(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     private Country country;
 }
 
